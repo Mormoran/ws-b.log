@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  root 'application#home'
+  root 'static_pages#index'
+  get 'about', to: 'static_pages#about'
 end

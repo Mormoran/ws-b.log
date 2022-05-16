@@ -1,6 +1,6 @@
-class ApplicationController < ActionController::Base
+# frozen_string_literal: true
 
-  def home
-    render html: "Hello, world!"
-  end
+# A controller for general actions
+class ApplicationController < ActionController::Base
+  def home; end
 end

@@ -3,4 +3,6 @@
 # A controller for all static pages
 class StaticPagesController < ApplicationController
   def index; end
+
+  def about; end
 end
