@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'static_pages#index'
+  root 'articles#index'
   get 'about', to: 'static_pages#about'
   resources :articles
 end

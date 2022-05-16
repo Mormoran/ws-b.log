@@ -2,9 +2,7 @@
 
 # A controller for all static pages
 class StaticPagesController < ApplicationController
-  def index
-    @articles = Article.all
-  end
+  def index; end
 
   def about; end
 end
