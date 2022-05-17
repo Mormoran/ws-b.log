@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.5'
 
+gem "rack-cors"
+gem 'active_model_serializers', '~> 0.10.12', require: true
 gem 'rails',      '6.1.4.6'
 gem 'puma',       '5.3.1'
 gem 'sass-rails', '6.0.0'
@@ -21,6 +23,8 @@ group :development do
   gem 'rack-mini-profiler', '2.3.1'
   gem 'listen',             '3.4.1'
   gem 'spring',             '2.1.1'
+  gem 'pry',                '~> 0.12'
+  gem 'pry-rails',          '~> 0.3'
 end
 
 group :test do
