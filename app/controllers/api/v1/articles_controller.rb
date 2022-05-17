@@ -3,13 +3,13 @@ class Api::V1::ArticlesController < ApplicationController
   # GET /articles
   def index
     @articles = Article.all
-    render json: @articles
+    render json: @articles, each_serializer: ArticleSerializer
   end
 
   # GET  /articles/:id
   def show
     @article = Article.find(params[:id])
-    render json: @article
+    render json: @article, serializer: ArticleSerializer
   end
 
   # POST /articles
