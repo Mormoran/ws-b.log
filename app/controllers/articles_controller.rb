@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
-# A controller for all static pages
+# A controller for all articles
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update show destroy]
 
-  def index; end
+  def index
+    @articles = Article.all
+  end
 
-  def new; end
+  def new
+    @article = Article.new
+  end
 
   def create
     @article = Article.new(article_params)
