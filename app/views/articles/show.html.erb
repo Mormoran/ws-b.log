@@ -4,6 +4,21 @@
   <%= @article.description %>
 </p>
 
+<p><span>Views: <%= @article.views %></span></p>
+<p><span>Comments: <%= @article.comments.count %></span></p>
+
+<p class="font-weight-bold">Leave a comment:</p>
+
+<%= form_for [@article, @comment] do |f| %>
+  <div class="form-group">
+    <%= f.label 'New comment' %>
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
+
+<%= render @article.comments %>
+
 <%= link_to 'Edit article', edit_article_path(@article) %>
 <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Go back', root_path %>

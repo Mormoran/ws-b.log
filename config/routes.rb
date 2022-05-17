@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   root 'articles#index'
   get 'about', to: 'static_pages#about'
+
   resources :articles do
     resources :comments
   end

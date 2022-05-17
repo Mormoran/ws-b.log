@@ -6,4 +6,6 @@ class Article < ApplicationRecord
   validates :description, presence: true, length: { minimum: 10, maximum: 2000 }
 
   has_many :comments, dependent: :destroy
+
+  accepts_nested_attributes_for :comments
 end

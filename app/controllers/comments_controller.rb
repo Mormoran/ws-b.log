@@ -2,10 +2,10 @@
 
 # A controller for all comments
 class CommentsController < ApplicationController
-  before_action :set_article, only: %i[create, destroy]
+  before_action :set_article, only: %i[create destroy]
 
   def create
-    @comment = @article.comment.create(comment_params)
+    @comment = @article.comments.create(comment_params)
 
     if @comment.save
       flash[:notice] = 'Your Article was saved successfully!'
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.find(params[:id])
     @comment.destroy
     flash[:notice] = 'Comment deleted.'
-    redirect_to articles_path
+    redirect_to article_path(@article)
   end
 
   private
@@ -30,6 +30,6 @@ class CommentsController < ApplicationController
   end
 
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:article_id])
   end
 end

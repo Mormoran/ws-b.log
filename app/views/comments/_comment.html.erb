@@ -1,0 +1,8 @@
+<% unless !comment.persisted? %>
+  <p>
+    <%= comment.content %>
+  </p>
+  <p>
+    <%= link_to 'Delete comment', [comment.article, comment], method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
