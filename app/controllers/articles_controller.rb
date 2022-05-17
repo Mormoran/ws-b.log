@@ -23,7 +23,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+    @article.increment!(:views)
+  end
 
   def edit; end
 
