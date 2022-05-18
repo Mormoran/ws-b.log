@@ -1,3 +1,4 @@
+<div class="pagination_wrapper"><%= will_paginate %></div>
 <% @articles.each do |article|%>
   <div class="article_wrapper">
     <h2 class="title"><%= link_to article.title, article%></h2>
@@ -9,3 +10,4 @@
     &ensp;|&ensp;<%= link_to 'Delete', article_path(article), class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 <% end %>
+<div class="pagination_wrapper"><%= will_paginate %></div>
