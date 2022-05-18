@@ -39,10 +39,8 @@ response - &#9745;
 * Avatars for comments (comments are anonymous at the moment)
 * Better front end
 
-# API endpoints:
-
-## Articles endpoints:
-# GET
+# API article endpoints:
+## GET
 
 * URL: `/api/v1/articles`
 * Params: None
@@ -96,7 +94,7 @@ response - &#9745;
 }
 ```
 
-# POST
+## POST
 
 * URL: `/api/v1/articles`
 * Params:
@@ -119,7 +117,7 @@ response - &#9745;
 }
 ```
 
-# PUT
+## PUT
 
 * URL: `/api/v1/articles/:id`
 * Params:
@@ -136,7 +134,7 @@ response - &#9745;
 }
 ```
 
-# DELETE
+## DELETE
 
 * URL: `/api/v1/articles/:id`
 * Params: None
@@ -147,9 +145,9 @@ response - &#9745;
 }
 ```
 
-## Comments endpoints:
+# API comments endpoints:
 
-# GET
+## GET
 
 * URL: `/api/v1/articles/:article_id/comments`
 * Params: None
@@ -185,7 +183,7 @@ response - &#9745;
 }
 ```
 
-# POST
+## POST
 
 * URL: `/api/v1/articles/:article_id/comments`
 * Params:
@@ -204,7 +202,7 @@ response - &#9745;
 }
 ```
 
-# DELETE
+## DELETE
 
 * URL: `/api/v1/articles/:article_id/comments/:id`
 * Params: None
