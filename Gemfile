@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.7.5'
 
 gem 'rack-cors'
 gem 'active_model_serializers', '~> 0.10.12', require: true
