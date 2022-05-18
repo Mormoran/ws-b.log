@@ -2,7 +2,7 @@
   <h1 class="title"><%= @article.title%></h1>
   <br>
   <p class="date">
-    Submitted <%= time_ago_in_words(@article.created_at)%> Ago
+    Submitted <%= time_ago_in_words(@article.created_at)%> ago
     &ensp;|&ensp;<%= link_to 'Edit', edit_article_path(@article), class: 'button'%>
     &ensp;|&ensp;<%= link_to 'Delete', article_path(@article), class: 'button'%>
   </p>
