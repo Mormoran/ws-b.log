@@ -27,7 +27,7 @@ class Api::V1::ArticlesController < ApplicationController
   def update
     if @article
       @article.update(article_params)
-      render json: { message: 'Article successfully update. '}, status: 200
+      render json: { message: 'Article successfully updated. '}, status: 200
     else
       ender json: { error: 'Unable to update article. '}, status: 400
     end
