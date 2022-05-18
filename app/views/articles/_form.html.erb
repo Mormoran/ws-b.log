@@ -1,23 +1,31 @@
-<% if @article.errors.any? %>
-  <h2>The following errors prevented the article from saving:</h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg|%>
-      <li>
-        <%= msg %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
 <%= form_for @article do |f| %>
+  <% if @article.errors.any? %>
+    <div id= 'errors'>
+      <h2><%= pluralize(@article.errors.count, 'error')%>
+          prevented this post from saving &#x21B4;
+      </h2>
+      <br>
+      <div class="msg_tray">
+        <ul>
+          <% @article.errors.full_messages.each do |msg|%>
+            <li><div class="msg_wrapper"><%= msg%></div></li>
+            <br>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
+  <br>
   <p>
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </p>
+  <br>
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Submit' %>
   </p>
 <% end %>
