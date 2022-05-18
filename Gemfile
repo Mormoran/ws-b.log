@@ -6,7 +6,7 @@ ruby '2.7.5'
 gem 'rack-cors'
 gem 'active_model_serializers', '~> 0.10.12', require: true
 gem 'rails',                    '6.1.4.6'
-gem 'puma',                     '5.3.1', require: true
+gem 'puma'
 gem 'sass-rails',               '6.0.0'
 gem 'webpacker',                '5.4.0'
 gem 'turbolinks',               '5.2.1'
