@@ -4,10 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.5'
 
 gem 'rack-cors'
-gem 'bundler',                  '~> 2.3'
 gem 'active_model_serializers', '~> 0.10.12', require: true
 gem 'rails',                    '6.1.4.6'
-gem 'puma',                     '5.3.1'
+gem 'puma',                     '5.3.1', require: true
 gem 'sass-rails',               '6.0.0'
 gem 'webpacker',                '5.4.0'
 gem 'turbolinks',               '5.2.1'
