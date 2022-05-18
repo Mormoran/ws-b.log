@@ -1,4 +1,6 @@
 class Api::V1::ArticlesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  before_action :set_article, only: %i[show update destroy]
 
   # GET /articles
   def index
@@ -8,7 +10,6 @@ class Api::V1::ArticlesController < ApplicationController
 
   # GET  /articles/:id
   def show
-    @article = Article.find(params[:id])
     render json: @article, serializer: ArticleSerializer
   end
 
@@ -16,15 +17,14 @@ class Api::V1::ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      render json: @article
+      render json: @article, serializer: ArticleSerializer
     else
-      render error: { error: 'Unable to create Article.' }, status: 400
+      render json: { error: 'Unable to create Article.' }, status: 400
     end
   end
 
   # PUT /articles/:id
   def update
-    @article = Article.find(params[:id])
     if @article
       @article.update(article_params)
       render json: { message: 'Article successfully update. '}, status: 200
@@ -35,7 +35,6 @@ class Api::V1::ArticlesController < ApplicationController
 
   # DELETE /articles/:id
   def destroy
-    @article = Article.find(params[:id])
     if @article
       @article.destroy
       render json: { message: 'Article successfully deleted. '}, status: 200
@@ -47,6 +46,10 @@ class Api::V1::ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.permit(:title, :description)
+  end
+
+  def set_article
+    @article = Article.eager_load(:comments).find(params[:id])
   end
 end

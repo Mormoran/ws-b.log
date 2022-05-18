@@ -54,6 +54,6 @@ class ArticlesController < ApplicationController
   end
 
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.eager_load(:comments).find(params[:id])
   end
 end
