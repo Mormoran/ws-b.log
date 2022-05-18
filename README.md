@@ -32,7 +32,6 @@ response - &#9745;
 
 ## Nice to haves:
 
-* Pagination
 * Admin interface for posting
 * Restricting new posts to admins only
 * User profiles
