@@ -221,12 +221,6 @@ a {
         .comment_content {
           float: left;
 
-          .comment_name {
-            margin: 1em 0 0 0;
-            font-size: 0.7em;
-            text-transform: uppercase;
-          }
-
           .comment_body {
             font-size: 1.2em;
             margin: 0.2em 0 0 0;
@@ -253,17 +247,6 @@ a {
   #page_wrapper {
     padding: 3em;
 
-    #profile_image {
-      width: 300px;
-      float: left;
-      margin-right: 2em;
-
-      img {
-        width: 100%;
-        border-radius: 0.35em;
-      }
-    }
-
     #content {
       h1 {
         font-weight: 500;
@@ -287,8 +270,6 @@ a {
   }
 
   input[type="text"],
-  input[type="email"],
-  input[type="password"],
   textarea {
     width: 90%;
     border: 1px solid #d6dce0;
