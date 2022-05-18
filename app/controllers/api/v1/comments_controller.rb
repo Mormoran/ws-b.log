@@ -29,9 +29,9 @@ class Api::V1::CommentsController < ApplicationController
   def destroy
     if @comment
       @comment.destroy
-      render json: { message: 'Comment successfully deleted. '}, status: 200
+      render json: { message: 'Comment successfully deleted.' }, status: 200
     else
-      render json: { error: 'Unable to delete comment. '}, status: 400
+      render json: { error: 'Unable to delete comment.' }, status: 400
     end
   end
 
