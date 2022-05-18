@@ -111,8 +111,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.6-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.6-x86_64-linux)
-      racc (~> 1.4)
     pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -217,7 +215,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
-  x86_64-linux
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.12)
@@ -244,6 +241,3 @@ DEPENDENCIES
 
 RUBY VERSION
    ruby 2.7.5p203
-
-BUNDLED WITH
-   2.2.28
