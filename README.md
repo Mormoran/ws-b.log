@@ -20,8 +20,8 @@ passed - &#9745;
 response - &#9745;
 * Comments can be deleted using an API call - &#9745;
 
-## Project outcome
-# Shortcomings
+# Project outcome
+## Shortcomings
 
 * Added Edit capability for articles even though it was not specified on design doc
 * No authentication
@@ -30,7 +30,7 @@ response - &#9745;
 * No authentication for API (anyone can do anything with API)
 * No bootstrap for front
 
-# Nice to haves:
+## Nice to haves:
 
 * Pagination
 * Admin interface for posting
@@ -39,9 +39,9 @@ response - &#9745;
 * Avatars for comments (comments are anonymous at the moment)
 * Better front end
 
-## API endpoints:
+# API endpoints:
 
-# Articles endpoints:
+## Articles endpoints:
 # GET
 
 * URL: `/api/v1/articles`
