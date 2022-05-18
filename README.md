@@ -44,7 +44,7 @@ response - &#9745;
 * URL: `/api/v1/articles`
 * Params: None
 * Returns:
-```
+```json
 [
   {
     "id": <article_id :: integer>,
@@ -71,7 +71,7 @@ response - &#9745;
 * URL: `/api/v1/articles/:id`
 * Params: None
 * Returns:
-```
+```json
 {
   "id": <article_id :: integer>,
   "created_at": "<article.created_at :: datetime -> string>",
@@ -97,14 +97,14 @@ response - &#9745;
 
 * URL: `/api/v1/articles`
 * Params:
-```
+```json
 {
   "title": "<string>",
   "description": "<string>",
 }
 ```
 * Returns:
-```
+```json
 {
   "id": <article_id :: integer>,
   "created_at": "<article.created_at :: datetime -> string>",
@@ -120,14 +120,14 @@ response - &#9745;
 
 * URL: `/api/v1/articles/:id`
 * Params:
-```
+```json
 {
   "title": "<string>", # Optional
   "description": "<string>", # Optional
 }
 ```
 * Returns:
-```
+```json
 {
   "message": "Article successfully updated. "
 }
@@ -138,7 +138,7 @@ response - &#9745;
 * URL: `/api/v1/articles/:id`
 * Params: None
 * Returns:
-```
+```json
 {
   "message": "Article successfully deleted. "
 }
@@ -151,7 +151,7 @@ response - &#9745;
 * URL: `/api/v1/articles/:article_id/comments`
 * Params: None
 * Returns:
-```
+```json
 [
   {
     "id": <comment_id :: integer>,
@@ -173,7 +173,7 @@ response - &#9745;
 * URL: `/api/v1/articles/:article_id/comments/:id`
 * Params: None
 * Returns:
-```
+```json
 {
   "id": <comment_id :: integer>,
   "created_at": "<comment.created_at :: datetime -> string>",
@@ -186,13 +186,13 @@ response - &#9745;
 
 * URL: `/api/v1/articles/:article_id/comments`
 * Params:
-```
+```json
 {
   "content": "<string>"
 }
 ```
 * Returns:
-```
+```json
 {
   "id": <comment_id :: integer>,
   "created_at": "<comment.created_at :: datetime -> string>",
@@ -206,7 +206,7 @@ response - &#9745;
 * URL: `/api/v1/articles/:article_id/comments/:id`
 * Params: None
 * Returns:
-```
+```json
 {
   "message": "Comment successfully deleted. "
 }
