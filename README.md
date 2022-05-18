@@ -146,3 +146,71 @@ response - &#9745;
   "message": "Article successfully deleted. "
 }
 ```
+
+## Comments endpoints:
+
+# GET
+
+* URL: `/api/v1/articles/:article_id/comments`
+* Params: None
+* Returns:
+```
+[
+  {
+    "id": <comment_id :: integer>,
+    "created_at": "<comment.created_at :: datetime -> string>",
+    "updated_at": "<comment.updated_at :: datetime -> string>",
+    "content": "<comment.content :: string>"
+  },
+  {
+    "id": <comment_id :: integer>,
+    "created_at": "<comment.created_at :: datetime -> string>",
+    "updated_at": "<comment.updated_at :: datetime -> string>",
+    "content": "<comment.content :: string>"
+  },
+    ...
+  }
+]
+```
+
+* URL: `/api/v1/articles/:article_id/comments/:id`
+* Params: None
+* Returns:
+```
+{
+  "id": <comment_id :: integer>,
+  "created_at": "<comment.created_at :: datetime -> string>",
+  "updated_at": "<comment.updated_at :: datetime -> string>",
+  "content": "<comment.content :: string>"
+}
+```
+
+# POST
+
+* URL: `/api/v1/articles/:article_id/comments`
+* Params:
+```
+{
+  "content": "<string>"
+}
+```
+* Returns:
+```
+{
+  "id": <comment_id :: integer>,
+  "created_at": "<comment.created_at :: datetime -> string>",
+  "updated_at": "<comment.updated_at :: datetime -> string>",
+  "content": "<comment.content :: string>"
+}
+```
+
+# DELETE
+
+* URL: `/api/v1/articles/:article_id/comments/:id`
+* Params: None
+* Returns:
+```
+{
+  "message": "Comment successfully deleted. "
+}
+```
