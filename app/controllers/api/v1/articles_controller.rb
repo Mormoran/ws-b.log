@@ -10,14 +10,14 @@ class Api::V1::ArticlesController < ApplicationController
 
   # GET  /articles/:id
   def show
-    render json: @article, serializer: ArticleSerializer
+    serialized_article(200)
   end
 
   # POST /articles
   def create
     @article = Article.new(article_params)
     if @article.save
-      render json: @article, serializer: ArticleSerializer
+      serialized_article(201)
     else
       render json: { error: 'Unable to create Article.' }, status: 400
     end
@@ -27,7 +27,7 @@ class Api::V1::ArticlesController < ApplicationController
   def update
     if @article
       @article.update(article_params)
-      render json: @article, serializer: ArticleSerializer
+      serialized_article(200)
     else
       ender json: { error: 'Unable to update article.' }, status: 400
     end
@@ -51,5 +51,9 @@ class Api::V1::ArticlesController < ApplicationController
 
   def set_article
     @article = Article.eager_load(:comments).find(params[:id])
+  end
+
+  def serialized_article(status)
+    render json: @article, serializer: ArticleSerializer, status: status
   end
 end

@@ -12,14 +12,14 @@ class Api::V1::CommentsController < ApplicationController
   # GET  /articles/:article_id/comments/:id
   def show
     @comment = Comment.find(params[:id])
-    render json: @comment, serializer: CommentSerializer
+    serialized_comment(200)
   end
 
   # POST /articles/:article_id/comments
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      render json: @comment, serializer: CommentSerializer
+      serialized_comment(201)
     else
       render json: { error: 'Unable to create comment.' }, status: 400
     end
@@ -47,5 +47,9 @@ class Api::V1::CommentsController < ApplicationController
 
   def set_comment
     @comment = Comment.find(params[:id])
+  end
+
+  def serialized_comment(status)
+    render json: @comment, serializer: CommentSerializer, status: status
   end
 end
