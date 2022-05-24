@@ -68,30 +68,28 @@ $ rails server
 
 Navigate to `localhost:3000` to start using the app in local mode.
 
-# API article endpoints:
+# Article API endpoints:
 ## GET
 
 * URL: `/api/v1/articles`
 * Params: None
+* Success response code: 200
 * Returns:
 ```json
 [
   {
-    "id": <article_id :: integer>,
+    "id": "<article_id :: integer>",
     "created_at": "<article.created_at :: datetime -> string>",
     "updated_at": "<article.updated_at :: datetime -> string>",
     "title": "<article.title :: string>",
     "description": "<article.description :: string>",
-    "views": <article.views :: integer>,
+    "views": "<article.views :: integer>",
     "comments": [
       {
-        "id": <comment_id :: integer>,
+        "id": "<comment_id :: integer>",
         "created_at": "<comment.created_at :: datetime -> string>",
         "updated_at": "<comment.updated_at :: datetime -> string>",
         "content": "<comment.content :: string>"
-      },
-      {
-        ...
       }
     ]
   }
@@ -100,24 +98,22 @@ Navigate to `localhost:3000` to start using the app in local mode.
 
 * URL: `/api/v1/articles/:id`
 * Params: None
+* Success response code: 200
 * Returns:
 ```json
 {
-  "id": <article_id :: integer>,
+  "id": "<article_id :: integer>",
   "created_at": "<article.created_at :: datetime -> string>",
   "updated_at": "<article.updated_at :: datetime -> string>",
   "title": "<article.title :: string>",
   "description": "<article.description :: string>",
-  "views": <article.views :: integer>,
+  "views": "<article.views :: integer>",
   "comments": [
     {
-      "id": <comment_id :: integer>,
+      "id": "<comment_id :: integer>",
       "created_at": "<comment.created_at :: datetime -> string>",
       "updated_at": "<comment.updated_at :: datetime -> string>",
       "content": "<comment.content :: string>"
-    },
-    {
-      ...
     }
   ]
 }
@@ -133,16 +129,25 @@ Navigate to `localhost:3000` to start using the app in local mode.
   "description": "<string>",
 }
 ```
+* Success response code: 201
 * Returns:
 ```json
 {
-  "id": <article_id :: integer>,
+  "id": "<article_id :: integer>",
   "created_at": "<article.created_at :: datetime -> string>",
   "updated_at": "<article.updated_at :: datetime -> string>",
   "title": "<article.title :: string>",
   "description": "<article.description :: string>",
-  "views": <article.views :: integer>,
+  "views": "<article.views :: integer>",
   "comments": []
+}
+```
+
+* Error response code: 400
+* Returns:
+```json
+{
+  "error": "Unable to create Article."
 }
 ```
 
@@ -156,6 +161,7 @@ Navigate to `localhost:3000` to start using the app in local mode.
   "description": "<string>", # Optional
 }
 ```
+* Success response code: 200
 * Returns:
 ```json
 {
@@ -163,10 +169,19 @@ Navigate to `localhost:3000` to start using the app in local mode.
 }
 ```
 
+* Error response code: 400
+* Returns:
+```json
+{
+  "error": "Unable to update Article."
+}
+```
+
 ## DELETE
 
 * URL: `/api/v1/articles/:id`
 * Params: None
+* Success response code: 200
 * Returns:
 ```json
 {
@@ -174,38 +189,46 @@ Navigate to `localhost:3000` to start using the app in local mode.
 }
 ```
 
-# API comments endpoints:
+* Error response code: 400
+* Returns:
+```json
+{
+  "error": "Unable to delete Article."
+}
+```
+
+# Comments API endpoints:
 
 ## GET
 
 * URL: `/api/v1/articles/:article_id/comments`
 * Params: None
+* Success response code: 200
 * Returns:
 ```json
 [
   {
-    "id": <comment_id :: integer>,
+    "id": "<comment_id :: integer>",
     "created_at": "<comment.created_at :: datetime -> string>",
     "updated_at": "<comment.updated_at :: datetime -> string>",
     "content": "<comment.content :: string>"
   },
   {
-    "id": <comment_id :: integer>,
+    "id": "<comment_id :: integer>",
     "created_at": "<comment.created_at :: datetime -> string>",
     "updated_at": "<comment.updated_at :: datetime -> string>",
     "content": "<comment.content :: string>"
-  },
-    ...
   }
 ]
 ```
 
 * URL: `/api/v1/articles/:article_id/comments/:id`
 * Params: None
+* Success response code: 200
 * Returns:
 ```json
 {
-  "id": <comment_id :: integer>,
+  "id": "<comment_id :: integer>",
   "created_at": "<comment.created_at :: datetime -> string>",
   "updated_at": "<comment.updated_at :: datetime -> string>",
   "content": "<comment.content :: string>"
@@ -221,13 +244,22 @@ Navigate to `localhost:3000` to start using the app in local mode.
   "content": "<string>"
 }
 ```
+* Success response code: 201
 * Returns:
 ```json
 {
-  "id": <comment_id :: integer>,
+  "id": "<comment_id :: integer>",
   "created_at": "<comment.created_at :: datetime -> string>",
   "updated_at": "<comment.updated_at :: datetime -> string>",
   "content": "<comment.content :: string>"
+}
+```
+
+* Error response code: 400
+* Returns:
+```json
+{
+  "error": "Unable to create comment."
 }
 ```
 
@@ -235,9 +267,18 @@ Navigate to `localhost:3000` to start using the app in local mode.
 
 * URL: `/api/v1/articles/:article_id/comments/:id`
 * Params: None
+* Success response code: 200
 * Returns:
 ```json
 {
   "message": "Comment successfully deleted. "
+}
+```
+
+* Error response code: 400
+* Returns:
+```json
+{
+  "error": "Unable to delete comment."
 }
 ```
