@@ -38,6 +38,36 @@ response - &#9745;
 * Avatars for comments (comments are anonymous at the moment)
 * Better front end
 
+## Get started
+
+Clone the repository and `cd` into the directory:
+
+```cli
+$ git clone https://github.com/Mormoran/ws-b.log.git
+$ cd ws-b.log
+```
+
+Then install the needed gems (while skipping any Ruby gems needed only in production, this is only a demo project and a production deploy is not in the scope):
+
+```cli
+$ bundle config set --local without 'production'
+$ bundle install
+```
+
+Next, migrate the database:
+
+```cli
+$ rails db:migrate
+```
+
+You are ready to run the app in a local server:
+
+```cli
+$ rails server
+```
+
+Navigate to `localhost:3000` to start using the app in local mode.
+
 # API article endpoints:
 ## GET
 
